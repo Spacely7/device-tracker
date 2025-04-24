@@ -302,3 +302,30 @@ body {
   background-color: #fdecea;
   border-radius: 8px;
 }
+/* Add these styles to your existing CSS */
+.nav-link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: white;
+  text-decoration: none;
+  padding: 12px 20px;
+  width: 100%;
+}
+
+.nav-item.active .nav-link {
+  color: white;
+}
+
+.nav-item {
+  padding: 0;
+  cursor: pointer;
+}
+
+.nav-item:hover {
+  background-color: #34495e;
+}
+
+.nav-item.active {
+  background-color: #3498db;
+}
