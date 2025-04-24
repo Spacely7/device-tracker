@@ -122,7 +122,7 @@ function setupSearch() {
       const shouldShow = deviceId.includes(searchTerm) || assignedTo.includes(searchTerm);
       row.style.display = shouldShow ? '' : 'none';
     });
-  });z
+  });
 }
 
 // Initialize the page
