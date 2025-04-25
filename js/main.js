@@ -17,7 +17,8 @@ document.addEventListener('DOMContentLoaded', function() {
   });
   
   // Set the initial active item based on current page
-  const currentPage = window.location.pathname.split('/').pop().replace('.html', '') || 'index';
+  const currentPath = window.location.pathname;
+  const currentPage = currentPath.split('/').pop().replace('.html', '') || 'index';
   const currentNavItem = document.querySelector(`.nav-item[data-page="${currentPage}"]`);
   if (currentNavItem) {
     setActiveNavItem(currentNavItem);
