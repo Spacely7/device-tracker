@@ -34,13 +34,14 @@ body {
   margin: 0;
 }
 
+/* Consolidated nav-item styles */
 .nav-item {
-  padding: 12px 20px;
   cursor: pointer;
   display: flex;
   align-items: center;
+  padding: 12px 20px;
   gap: 10px;
-  transition: background-color 0.2s;
+  transition: background-color 0.3s;
 }
 
 .nav-item:hover {
@@ -49,6 +50,8 @@ body {
 
 .nav-item.active {
   background-color: #3498db;
+  border-left: 3px solid #fff;
+  padding-left: 17px; /* 20px - 3px border */
 }
 
 .nav-item i {
@@ -302,45 +305,13 @@ body {
   background-color: #fdecea;
   border-radius: 8px;
 }
-/* Add these styles to your existing CSS */
+
+/* Nav link styles for proper link handling */
 .nav-link {
+  color: white;
+  text-decoration: none;
   display: flex;
   align-items: center;
   gap: 10px;
-  color: white;
-  text-decoration: none;
-  padding: 12px 20px;
   width: 100%;
-}
-
-.nav-item.active .nav-link {
-  color: white;
-}
-
-.nav-item {
-  padding: 0;
-  cursor: pointer;
-}
-
-.nav-item:hover {
-  background-color: #34495e;
-}
-
-.nav-item.active {
-  background-color: #3498db;
-}
-
-/* Add this to your existing CSS */
-.nav-item {
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
-
-.nav-item.active {
-  background-color: rgba(255, 255, 255, 0.1);
-  border-left: 3px solid #fff;
-}
-
-.nav-item:hover {
-  background-color: rgba(255, 255, 255, 0.05);
 }
