@@ -16,8 +16,15 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
   
-  // Set the initial active item (assuming the first one is active on page load)
-  setActiveNavItem(document.querySelector('.nav-item[data-page="index"]'));
+  // Set the initial active item based on current page
+  const currentPage = window.location.pathname.split('/').pop().replace('.html', '') || 'index';
+  const currentNavItem = document.querySelector(`.nav-item[data-page="${currentPage}"]`);
+  if (currentNavItem) {
+    setActiveNavItem(currentNavItem);
+  } else {
+    // Default to dashboard if no matching page is found
+    setActiveNavItem(document.querySelector('.nav-item[data-page="index"]'));
+  }
   
   // Function to navigate to different pages
   function navigateTo(page) {
