@@ -329,3 +329,18 @@ body {
 .nav-item.active {
   background-color: #3498db;
 }
+
+/* Add this to your existing CSS */
+.nav-item {
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.nav-item.active {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-left: 3px solid #fff;
+}
+
+.nav-item:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+}
