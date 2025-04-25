@@ -1,3 +1,50 @@
+document.addEventListener('DOMContentLoaded', function() {
+  // Get all navigation items
+  const navItems = document.querySelectorAll('.nav-item');
+  
+  // Add click event listener to each navigation item
+  navItems.forEach(item => {
+    item.addEventListener('click', function() {
+      // Get the page attribute
+      const page = this.getAttribute('data-page');
+      
+      // Handle navigation
+      navigateTo(page);
+      
+      // Update active state
+      setActiveNavItem(this);
+    });
+  });
+  
+  // Set the initial active item (assuming the first one is active on page load)
+  setActiveNavItem(document.querySelector('.nav-item[data-page="index"]'));
+  
+  // Function to navigate to different pages
+  function navigateTo(page) {
+    if (page === 'index') {
+      // For the index/dashboard page
+      window.location.href = 'index.html';
+    } else {
+      // For other pages
+      window.location.href = page + '.html';
+    }
+  }
+  
+  // Function to set active navigation item
+  function setActiveNavItem(activeItem) {
+    // Remove active class from all items
+    navItems.forEach(item => {
+      item.classList.remove('active');
+    });
+    
+    // Add active class to the clicked item
+    activeItem.classList.add('active');
+    
+    // Update page title based on the active navigation
+    const pageName = activeItem.querySelector('span').textContent;
+    document.querySelector('.page-title').textContent = pageName;
+  }
+});
 // API base URL
 const API_BASE_URL = 'https://api.example.com';
 
