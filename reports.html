@@ -24,7 +24,7 @@
         <i class="fas fa-clock"></i>
         <span>Delayed</span>
       </li>
-      <li class="nav-item active" data-page="reports">
+      <li class="nav-item" data-page="reports">
         <i class="fas fa-file-alt"></i>
         <span>Reports</span>
       </li>
@@ -38,7 +38,6 @@
       <span>John Doe</span>
     </div>
   </div>
-
   <!-- Main Content -->
   <div class="main-content">
     <div class="page-header">
@@ -50,116 +49,88 @@
         </div>
       </div>
     </div>
-
     <div class="content">
-      <div class="tab-container">
+      <!-- Report Filter Controls -->
+      <div class="report-filters">
         <div class="tabs">
           <div class="tab active">Standard Reports</div>
           <div class="tab">Custom Reports</div>
           <div class="tab">Scheduled Reports</div>
         </div>
-      </div>
-
-      <div class="report-filters">
-        <div class="filter-group">
-          <label class="filter-label">Date Range</label>
-          <select class="filter-input">
-            <option>Last 7 Days</option>
-            <option selected>Last 30 Days</option>
-            <option>Last Quarter</option>
-            <option>Custom Range</option>
-          </select>
-        </div>
-        <div class="filter-group">
-          <label class="filter-label">Agency</label>
-          <select class="filter-input">
-            <option>All Agencies</option>
-            <option>Port Authority</option>
-            <option>Customs</option>
-            <option>Security</option>
-            <option>Harbor Patrol</option>
-          </select>
-        </div>
-        <div class="filter-group">
-          <label class="filter-label">Destination</label>
-          <select class="filter-input">
-            <option>All Destinations</option>
-            <option>North Terminal</option>
-            <option>South Terminal</option>
-            <option>East Terminal</option>
-            <option>West Terminal</option>
-          </select>
-        </div>
-      </div>
-
-      <div class="report-card">
-        <div class="report-icon"><i class="fas fa-chart-line"></i></div>
-        <div class="report-content">
-          <h3 class="report-title">Device Issued vs Returned</h3>
-          <p class="report-description">Comparative analysis of devices issued and returned within the selected time period, broken down by day/week.</p>
-          <div class="report-actions">
-            <button class="action-button">
-              <i class="fas fa-eye"></i>
-              <span>Preview</span>
-            </button>
-            <button class="action-button export">
-              <i class="fas fa-file-pdf"></i>
-              <span>Export PDF</span>
-            </button>
-            <button class="action-button export">
-              <i class="fas fa-file-excel"></i>
-              <span>Export Excel</span>
-            </button>
+        <div class="filter-row">
+          <div class="filter-group">
+            <label>Date Range</label>
+            <select>
+              <option>Last 7 days</option>
+              <option>Last 30 days</option>
+              <option>This month</option>
+              <option>Custom range</option>
+            </select>
           </div>
+          <div class="filter-group">
+            <label>Agency</label>
+            <select>
+              <option>All Agencies</option>
+              <option>Agency A</option>
+              <option>Agency B</option>
+              <option>Agency C</option>
+            </select>
+          </div>
+          <div class="filter-group">
+            <label>Destination</label>
+            <select>
+              <option>All Destinations</option>
+              <option>Location A</option>
+              <option>Location B</option>
+              <option>Location C</option>
+            </select>
+          </div>
+          <button class="action-button">
+            <i class="fas fa-filter"></i>
+            Apply Filters
+          </button>
+        </div>
+      </div>
+      
+      <!-- Device Tracking Table -->
+      <div class="report-section">
+        <h2 class="section-title">Device Tracking Summary</h2>
+        <div class="data-table-container">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Date</th>
+                <th>Agency Name</th>
+                <th>Destination</th>
+                <th>Regime</th>
+                <th>Devices Requested</th>
+                <th>Devices Retrieved</th>
+                <th>Devices Left</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody id="device-tracking-data">
+              <!-- Data will be populated by JavaScript -->
+            </tbody>
+          </table>
+        </div>
+        <div class="pagination">
+          <div class="page-button"><i class="fas fa-chevron-left"></i></div>
+          <div class="page-button active">1</div>
+          <div class="page-button">2</div>
+          <div class="page-button">3</div>
+          <div class="page-button"><i class="fas fa-chevron-right"></i></div>
         </div>
       </div>
 
-      <div class="report-card">
-        <div class="report-icon" style="background-color: #e74c3c;"><i class="fas fa-clock"></i></div>
-        <div class="report-content">
-          <h3 class="report-title">Late Returns Summary</h3>
-          <p class="report-description">Detailed breakdown of late device returns by department, severity, and frequency.</p>
-          <div class="report-actions">
-            <button class="action-button">
-              <i class="fas fa-eye"></i>
-              <span>Preview</span>
-            </button>
-            <button class="action-button export">
-              <i class="fas fa-file-pdf"></i>
-              <span>Export PDF</span>
-            </button>
-            <button class="action-button export">
-              <i class="fas fa-file-excel"></i>
-              <span>Export Excel</span>
-            </button>
-          </div>
-        </div>
-      </div>
-
-      <div class="report-card">
-        <div class="report-icon" style="background-color: #8e44ad;"><i class="fas fa-users"></i></div>
-        <div class="report-content">
-          <h3 class="report-title">Device Usage by Department</h3>
-          <p class="report-description">Analysis of device allocation and utilization patterns across different departments.</p>
-          <div class="report-actions">
-            <button class="action-button">
-              <i class="fas fa-eye"></i>
-              <span>Preview</span>
-            </button>
-            <button class="action-button export">
-              <i class="fas fa-file-pdf"></i>
-              <span>Export PDF</span>
-            </button>
-            <button class="action-button export">
-              <i class="fas fa-file-excel"></i>
-              <span>Export Excel</span>
-            </button>
-          </div>
-        </div>
+      <!-- Additional Report Cards Section -->
+      <h2 class="section-title">Available Reports</h2>
+      <div id="report-cards-container">
+        <!-- Report cards will be added here by JavaScript -->
       </div>
     </div>
   </div>
-
   <script src="js/main.js"></script>
+  <script src="js/reports.js"></script>
 </body>
 </html>
